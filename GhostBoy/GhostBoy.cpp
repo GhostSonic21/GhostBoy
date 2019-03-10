@@ -230,7 +230,7 @@ int main(int argc, char* argv[])
 		// Main CPU loop
 		while (!gbgpu.newVblank && (!gbgpu2.newVblank || !twoGameBoy)) {
 			// GB1
-			while (cycleSyncer <= 0 || (!twoGameBoy && !gbgpu.newVblank)) {
+			while ((twoGameBoy && cycleSyncer <= 0) || (!twoGameBoy && !gbgpu.newVblank)) {
 				CPU.executeOneInstruction();
 				int lastCycleCount = CPU.getLastCycleCount();
 				if (CPU.getDoubleSpeed()) {
