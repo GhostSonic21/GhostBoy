@@ -46,7 +46,7 @@ void NoiseChannel::writeRegister(uint16_t address, uint8_t data)
 			break;
 		case 0xFF20:
 			lengthLoad = data & 0x3F;
-			//lengthCounter = 64 - lengthLoad;
+			lengthCounter = 64 - lengthLoad;
 			break;
 		case 0xFF21:
 			// See if dac is enabled, if all high 5 bits are not 0
@@ -57,9 +57,9 @@ void NoiseChannel::writeRegister(uint16_t address, uint8_t data)
 			envelopeAddMode = (data & 0x8) == 0x8;
 			// Period
 			envelopePeriodLoad = (data & 0x7);
-			//envelopePeriod = envelopePeriodLoad;
+			envelopePeriod = envelopePeriodLoad;
 			// TEMP?
-			//volume = volumeLoad;
+			volume = volumeLoad;
 			break;
 		case 0xFF22:
 			divisorCode = data & 0x7;
