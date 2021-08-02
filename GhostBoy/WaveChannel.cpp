@@ -56,7 +56,7 @@ void WaveChannel::writeRegister(uint16_t address, uint8_t data)
 				break;
 			case 0xB:
 				lengthLoad = data;
-				//lengthCounter = 256 - lengthLoad;
+				lengthCounter = 256 - lengthLoad;
 				break;
 			case 0xC:
 				volumeCode = (data >> 5) & 0x3;

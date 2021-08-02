@@ -60,7 +60,7 @@ void SquareChannel::writeRegister(uint16_t address, uint8_t data)
 		// Duty, Length Load
 		case 0x1:
 			lengthLoad = data & 0x3F;
-			//lengthCounter = 64 - (lengthLoad & 0x3F);
+			lengthCounter = 64 - (lengthLoad & 0x3F);
 			duty = (data >> 6) & 0x3;
 			break;
 		// Envelope
