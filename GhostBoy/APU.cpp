@@ -228,7 +228,7 @@ void APU::step(int cycles)
 
 			// Right
 			bufferin0 = 0;
-			volume = (128 * leftVol) / 7;
+			volume = (128 * rightVol) / 7;
 			if (rightEnables[0]) {
 				bufferin1 = ((float)squareOne.getOutputVol()) / 100;
 				SDL_MixAudioFormat((Uint8*)&bufferin0, (Uint8*)&bufferin1, AUDIO_F32SYS, sizeof(float), volume);
